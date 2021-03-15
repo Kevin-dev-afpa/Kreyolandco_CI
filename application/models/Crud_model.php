@@ -102,7 +102,150 @@ class Crud_model extends CI_Model
     public function deleteDataProfessionnel($id)
     {
         $this->db->where('pro_id', $id);
-        $this->db->delete('professionnel');
+        $this->db->delete('Professionnel');
     }
     // ------------------ Fin partie professionnel ------------------ //
+
+    // ******************************************************* //
+
+    // ------------------ partie Diaporama ------------------ //
+
+    // ------------------ Fin partie Diaporama ------------------ //
+
+    // ******************************************************* //
+
+    // ******************************************************* //
+
+    // ------------------ partie Cheffe ------------------ //
+    public function createDataCheffe()
+    {
+        // Je crée un tableau qui va contenir toutes les info de mon formulaire d'ajout de cheffe.
+        $data = array(
+            'che_description' => $this->input->post('description'),
+            'che_photo_cheffe' => $this->input->post('photo_cheffe'),
+            'che_photo_plat' => $this->input->post('photo_plat'),
+        );
+        $this->db->insert('Cheffe', $data);
+    }
+
+    // Je récupère toutes les infos de mes cheffe en bdd.
+    public function getAllDataCheffe()
+    {
+        $query = $this->db->query('SELECT * FROM Cheffe');
+        return $query->result();
+    }
+
+    // Je récupère les infos selon l'ID du cheffe.
+    public function getDataCheffe($id)
+    {
+        $query = $this->db->query('SELECT * FROM Cheffe WHERE che_id =' . $id);
+        return $query->row();
+    }
+
+    // Je met à jour mes informations de mes cheffes.
+    public function updateDataCheffe($id)
+    {
+        $data = array(
+            'che_description' => $this->input->post('description'),
+            'che_photo_cheffe' => $this->input->post('photo_cheffe'),
+            'che_photo_plat' => $this->input->post('photo_plat'),
+        );
+        $this->db->where('che_id', $id);
+        $this->db->update('Cheffe', $data);
+    }
+
+    // Je supprime les infos de ma bdd cheffe.
+    public function deleteDataCheffe($id)
+    {
+        $this->db->where('che_id', $id);
+        $this->db->delete('Cheffe');
+    }
+
+    // ------------------ Fin partie Cheffe ------------------ //
+
+    // ******************************************************* //
+
+    // ------------------ partie Service ------------------ //
+    public function createDataService()
+    {
+        // Je crée un tableau qui va contenir toutes les info de mon formulaire d'ajout de cheffe.
+        $data = array(
+            'ser_date' => $this->input->post('date'),
+            'ser_cp' => $this->input->post('cp'),
+            'ser_lieu' => $this->input->post('lieu'),
+            'ser_capacite' => $this->input->post('capacite'),
+            'ser_description_courte' => $this->input->post('description_courte'),
+            'ser_description_longue' => $this->input->post('description_longue'),
+            'ser_type' => $this->input->post('type'),
+        );
+        $this->db->insert('Service', $data);
+    }
+
+    // Je récupère toutes les infos de mes cheffe en bdd.
+    public function getAllDataService()
+    {
+        $query = $this->db->query('SELECT * FROM Service');
+        return $query->result();
+    }
+
+    // Je récupère les infos selon l'ID du cheffe.
+    public function getDataService($id)
+    {
+        $query = $this->db->query('SELECT * FROM Service WHERE ser_id =' . $id);
+        return $query->row();
+    }
+
+    // Je met à jour mes informations de mes cheffes.
+    public function updateDataService($id)
+    {
+        $data = array(
+            'ser_date' => $this->input->post('date'),
+            'ser_cp' => $this->input->post('cp'),
+            'ser_lieu' => $this->input->post('lieu'),
+            'ser_capacite' => $this->input->post('capacite'),
+            'ser_description_courte' => $this->input->post('description_courte'),
+            'ser_description_longue' => $this->input->post('description_longue'),
+            'ser_type' => $this->input->post('type'),
+        );
+        $this->db->where('ser_id', $id);
+        $this->db->update('Service', $data);
+    }
+
+    // Je supprime les infos de ma bdd cheffe.
+    public function deleteDataService($id)
+    {
+        $this->db->where('ser_id', $id);
+        $this->db->delete('Service');
+    }
+    // ------------------ Fin partie Service ------------------ //
+
+    // ******************************************************* //
+
+    // ------------------ partie Réservation ------------------ //
+
+    // ------------------ Fin partie Réservation ------------------ //
+
+    // ------------------ partie Evénement ------------------ //
+
+    // ------------------ Fin partie Evénement ------------------ //
+
+    // ******************************************************* //
+
+    // ------------------ partie Tâche ------------------ //
+
+    // ------------------ Fin partie Tâche ------------------ //
+
+    // ******************************************************* //
+
+    // ------------------ partie Palmarès ------------------ //
+
+    // ------------------ Fin partie Palmarès ------------------ //
+
+    // ******************************************************* //
+
+    // ------------------ partie Parcours ------------------ //
+
+    // ------------------ Fin partie Parcours ------------------ //
+
+    // ******************************************************* //
 }

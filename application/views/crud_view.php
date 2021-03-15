@@ -9,8 +9,8 @@
 				<img src="/assets/img/image_crud.jpg" class="card-img-top" alt="/assets/img/image_crud.jpg">
 				<div class="card-body">
 					<h5 class="card-title">Client</h5>
-					<p class="card-text">Ici vous pouvez ajouter, modifier et supprimer les clients</p>
-					<a href="<?php echo site_url('CrudController/client') ?>" class="btn btn-primary">Client</a>
+					<p class="card-text">Fait</p>
+					<a href="<?php echo site_url('CrudController/client') ?>" class="btn btn-success">Client</a>
 				</div>
 			</div>
 		</div>
@@ -19,8 +19,8 @@
 				<img src="/assets/img/image_crud.jpg" class="card-img-top" alt="/assets/img/image_crud.jpg">
 				<div class="card-body">
 					<h5 class="card-title">Professionnel</h5>
-					<p class="card-text">Ici vous pouvez ajouter, modifier et supprimer les professionnels</p>
-					<a href="<?php echo site_url('CrudController/professionnel') ?>" class="btn btn-primary">Professionnel</a>
+					<p class="card-text">Fait</p>
+					<a href="<?php echo site_url('CrudController/professionnel') ?>" class="btn btn-success">Professionnel</a>
 				</div>
 			</div>
 		</div>
@@ -42,8 +42,8 @@
 				<img src="/assets/img/image_crud.jpg" class="card-img-top" alt="/assets/img/image_crud.jpg">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
-					<p class="card-text">...</p>
-					<a href="#" class="btn btn-primary">Cheffe</a>
+					<p class="card-text">Fait</p>
+					<a href="<?php echo site_url('CrudController/cheffe') ?>" class="btn btn-success">Cheffe</a>
 				</div>
 			</div>
 		</div>
@@ -52,8 +52,8 @@
 				<img src="/assets/img/image_crud.jpg" class="card-img-top" alt="/assets/img/image_crud.jpg">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
-					<p class="card-text">...</p>
-					<a href="#" class="btn btn-primary">Service</a>
+					<p class="card-text">Fait</p>
+					<a href="<?php echo site_url('CrudController/service') ?>" class="btn btn-success">Service</a>
 				</div>
 			</div>
 		</div>

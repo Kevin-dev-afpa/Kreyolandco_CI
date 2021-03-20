@@ -183,13 +183,77 @@ class CrudController extends CI_Controller
     // ------------------ Fin partie Réservation ------------------ //
 
     // ------------------ partie Evénement ------------------ //
+    public function evenement()
+    {
+        $data['result'] = $this->Crud_model->getAllDataEvenement();
+        $this->load->view('evenement', $data);
+    }
 
+    // Ici cela concerne la mise en place de la création evenement
+    public function create_evenement()
+    {
+        $this->Crud_model->createDataEvenement();
+        redirect('CrudController');
+    }
+
+    // Avec cette fonction je modifie les infos des evenements.
+    public function edit_evenement($id)
+    {
+        $data['row'] = $this->Crud_model->getDataEvenement($id);
+        $this->load->view('crud_edit_evenement', $data);
+    }
+
+    // Avec cette fonction je met à jour les infos evenement.
+    public function update_evenement($id)
+    {
+        $this->Crud_model->updateDataEvenement($id);
+        redirect('CrudController');
+    }
+
+    // Ici je met en place la suppression des evenements.
+    public function delete_evenement($id)
+    {
+        $this->Crud_model->deleteDataEvenement($id);
+        redirect('CrudController');
+    }
     // ------------------ Fin partie Evénement ------------------ //
 
     // ******************************************************* //
 
     // ------------------ partie Tâche ------------------ //
+    public function tache()
+    {
+        $data['result'] = $this->Crud_model->getAllDataTache();
+        $this->load->view('tache', $data);
+    }
 
+    // Ici cela concerne la mise en place de la création tache
+    public function create_tache()
+    {
+        $this->Crud_model->createDataTache();
+        redirect('CrudController');
+    }
+
+    // Avec cette fonction je modifie les infos des taches.
+    public function edit_tache($id)
+    {
+        $data['row'] = $this->Crud_model->getDataTache($id);
+        $this->load->view('crud_edit_tache', $data);
+    }
+
+    // Avec cette fonction je met à jour les infos tache.
+    public function update_tache($id)
+    {
+        $this->Crud_model->updateDataTache($id);
+        redirect('CrudController');
+    }
+
+    // Ici je met en place la suppression des taches.
+    public function delete_tache($id)
+    {
+        $this->Crud_model->deleteDataTache($id);
+        redirect('CrudController');
+    }
     // ------------------ Fin partie Tâche ------------------ //
 
     // ******************************************************* //

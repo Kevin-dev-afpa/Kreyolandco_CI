@@ -226,13 +226,97 @@ class Crud_model extends CI_Model
     // ------------------ Fin partie Réservation ------------------ //
 
     // ------------------ partie Evénement ------------------ //
+    public function createDataEvenement()
+    {
+        // Je crée un tableau qui va contenir toutes les info de mon formulaire d'ajout de client.
+        $data = array(
+            'eve_titre' => $this->input->post('titre'),
+            'eve_description_courte' => $this->input->post('description_courte'),
+            'eve_description_longue' => $this->input->post('description_longue'),
+            'eve_che_id' => $this->input->post('eve_che_id'),
+        );
+        $this->db->insert('Evenement', $data);
+    }
 
+    // Je récupère toutes les infos de mes clients en bdd.
+    public function getAllDataEvenement()
+    {
+        $query = $this->db->query('SELECT * FROM Evenement');
+        return $query->result();
+    }
+
+    // Je récupère les infos selon l'ID de mes clients.
+    public function getDataEvenement($id)
+    {
+        $query = $this->db->query('SELECT * FROM Evenement WHERE eve_id =' . $id);
+        return $query->row();
+    }
+
+    // Je met à jour mes informations de mes clients.
+    public function updateDataEvenement($id)
+    {
+        $data = array(
+            'eve_titre' => $this->input->post('titre'),
+            'eve_description_courte' => $this->input->post('description_courte'),
+            'eve_description_longue' => $this->input->post('description_longue'),
+            'eve_che_id' => $this->input->post('eve_che_id'),
+        );
+        $this->db->where('eve_id', $id);
+        $this->db->update('Evenement', $data);
+    }
+
+    // Je supprime les infos de ma bdd de mes clients.
+    public function deleteDataEvenement($id)
+    {
+        $this->db->where('eve_id', $id);
+        $this->db->delete('Evenement');
+    }
     // ------------------ Fin partie Evénement ------------------ //
 
     // ******************************************************* //
 
     // ------------------ partie Tâche ------------------ //
+    public function createDataTache()
+    {
+        // Je crée un tableau qui va contenir toutes les info de mon formulaire d'ajout de client.
+        $data = array(
+            'tac_description' => $this->input->post('description'),
+            'tac_exp_id' => $this->input->post('exp_id'),
+        );
+        $this->db->insert('Tache', $data);
+    }
 
+    // Je récupère toutes les infos de mes clients en bdd.
+    public function getAllDataTache()
+    {
+        $query = $this->db->query('SELECT * FROM Tache');
+        return $query->result();
+    }
+
+    // Je récupère les infos selon l'ID de mes clients.
+    public function getDataTache($id)
+    {
+        $query = $this->db->query('SELECT * FROM Tache WHERE tac_id =' . $id);
+        return $query->row();
+    }
+
+    // Je met à jour mes informations de mes clients.
+    public function updateDataTache($id)
+    {
+        $data = array(
+            'tac_description' => $this->input->post('description'),
+            'tac_exp_id' => $this->input->post('exp_id'),
+        );
+        $this->db->where('tac_id', $id);
+        $this->db->update('Tache', $data);
+    }
+
+    // Je supprime les infos de ma bdd de mes clients.
+    public function deleteDataTache($id)
+    {
+        $this->db->where('tac_id', $id);
+        $this->db->delete('Tache');
+    }
     // ------------------ Fin partie Tâche ------------------ //
 
     // ******************************************************* //

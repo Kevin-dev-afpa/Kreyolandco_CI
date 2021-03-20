@@ -95,8 +95,8 @@
 				<img src="/assets/img/image_crud.jpg" class="card-img-top" alt="/assets/img/image_crud.jpg">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
-					<p class="card-text">...</p>
-					<a href="<?php echo site_url('CrudController/palmares') ?>" class="btn btn-primary">Palmarès</a>
+					<p class="card-text">Fait</p>
+					<a href="<?php echo site_url('CrudController/palmares') ?>" class="btn btn-success">Palmarès</a>
 				</div>
 			</div>
 		</div>

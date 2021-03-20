@@ -259,13 +259,76 @@ class CrudController extends CI_Controller
     // ******************************************************* //
 
     // ------------------ partie Palmarès ------------------ //
+    public function palmares()
+    {
+        $data['result'] = $this->Crud_model->getAllDataPalmares();
+        $this->load->view('palmares', $data);
+    }
+
+    // Ici cela concerne la mise en place de la création palmares
+    public function create_palmares()
+    {
+        $this->Crud_model->createDataPalmares();
+        redirect('CrudController');
+    }
+
+    public function edit_Palmares($id)
+    {
+        $data['row'] = $this->Crud_model->getDataPalmares($id);
+        $this->load->view('crud_edit_palmares', $data);
+    }
+
+    // Avec cette fonction je met à jour les infos palmares.
+    public function update_palmares($id)
+    {
+        $this->Crud_model->updateDataPalmares($id);
+        redirect('CrudController');
+    }
+
+    // Ici je met en place la suppression du palmares.
+    public function delete_palmares($id)
+    {
+        $this->Crud_model->deleteDataPalmares($id);
+        redirect('CrudController');
+    }
 
     // ------------------ Fin partie Palmarès ------------------ //
 
     // ******************************************************* //
 
     // ------------------ partie Parcours ------------------ //
+    public function parcours()
+    {
+        $data['result'] = $this->Crud_model->getAllDataParcours();
+        $this->load->view('parcours', $data);
+    }
 
+    // Ici cela concerne la mise en place de la création parcours
+    public function create_parcours()
+    {
+        $this->Crud_model->createDataParcours();
+        redirect('CrudController');
+    }
+
+    public function edit_parcours($id)
+    {
+        $data['row'] = $this->Crud_model->getDataParcours($id);
+        $this->load->view('crud_edit_parcours', $data);
+    }
+
+    // Avec cette fonction je met à jour les infos parcours.
+    public function update_parcours($id)
+    {
+        $this->Crud_model->updateDataParcours($id);
+        redirect('CrudController');
+    }
+
+    // Ici je met en place la suppression du parcours.
+    public function delete_parcours($id)
+    {
+        $this->Crud_model->deleteDataParcours($id);
+        redirect('CrudController');
+    }
     // ------------------ Fin partie Parcours ------------------ //
 
     // ******************************************************* //

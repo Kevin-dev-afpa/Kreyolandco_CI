@@ -323,12 +323,81 @@ class Crud_model extends CI_Model
 
     // ------------------ partie Palmarès ------------------ //
 
+    public function createDataPalmares()
+    {
+        // Je crée un tableau qui va contenir toutes les info de mon formulaire d'ajout du palmares.
+        $data = array(
+            'pal_intitule' => $this->input->post('intitule'),
+            'pal_date_obtention' => $this->input->post('date_obtention'),
+            'pal_description' => $this->input->post('description'),
+            'pal_che_id' => $this->input->post('che_id'),
+        );
+        $this->db->insert('Palmares', $data);
+    }
+
+    public function getAllDataPalmares()
+    {
+        $query = $this->db->query('SELECT * FROM Palmares');
+        return $query->result();
+    }
+
+    public function getDataPalmares($id)
+    {
+        $query = $this->db->query('SELECT * FROM Palmares WHERE pal_id =' . $id);
+        return $query->row();
+    }
+
+    // Je met à jour mes informations du palmares.
+    public function updateDataPalmares($id)
+    {
+        $data = array(
+            'pal_intitule' => $this->input->post('intitule'),
+            'pal_date_obtention' => $this->input->post('date_obtention'),
+            'pal_description' => $this->input->post('description'),
+            'pal_che_id' => $this->input->post('che_id'),
+        );
+        $this->db->where('pal_id', $id);
+        $this->db->update('Palmares', $data);
+    }
     // ------------------ Fin partie Palmarès ------------------ //
 
     // ******************************************************* //
 
     // ------------------ partie Parcours ------------------ //
+    public function createDataParcours()
+    {
+        // Je crée un tableau qui va contenir toutes les info de mon formulaire d'ajout du Parcours.
+        $data = array(
+            'exp_poste_occupe' => $this->input->post('poste_occupe'),
+            'exp_entreprise' => $this->input->post('entreprise'),
+            'exp_che_id' => $this->input->post('che_id'),
+        );
+        $this->db->insert('Parcours', $data);
+    }
 
+    public function getAllDataParcours()
+    {
+        $query = $this->db->query('SELECT * FROM Parcours');
+        return $query->result();
+    }
+
+    public function getDataParcours($id)
+    {
+        $query = $this->db->query('SELECT * FROM Parcours WHERE exp_id =' . $id);
+        return $query->row();
+    }
+
+    // Je met à jour mes informations du Parcours.
+    public function updateDataParcours($id)
+    {
+        $data = array(
+            'exp_poste_occupe' => $this->input->post('poste_occupe'),
+            'exp_entreprise' => $this->input->post('entreprise'),
+            'exp_che_id' => $this->input->post('che_id'),
+        );
+        $this->db->where('exp_id', $id);
+        $this->db->update('Parcours', $data);
+    }
     // ------------------ Fin partie Parcours ------------------ //
 
     // ******************************************************* //

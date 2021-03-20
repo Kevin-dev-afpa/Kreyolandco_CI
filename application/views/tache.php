@@ -19,20 +19,20 @@
 				</div>
 				<div class="modal-body">
 					<form action="<?php echo site_url('CrudController/create_tache') ?>" method="POST">
-                    <div class="form-group">
+						<div class="form-group">
 							<label for="Description">Description</label>
 							<input type="text" class="form-control" id="description" name="description"
 								placeholder="description">
-                        </div>
-                        <div class="form-group">
+						</div>
+						<div class="form-group">
 							<label for="exp_id">Exp_id</label>
 							<input type="text" class="form-control" id="exp_id" name="exp_id"
 								placeholder="Description courte">
 						</div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <button type="submit" class="btn btn-primary">Ajouter</button>
-                        </div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							<button type="submit" class="btn btn-primary">Ajouter</button>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -44,19 +44,22 @@
 				<th scope="col">ID</th>
 				<th scope="col">Description</th>
 				<th scope="col">exp_id</th>
-                <th scope="col">Action</th>
+				<th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody>
-            <?php foreach ($result as $row) {?>
+			<?php foreach ($result as $row) {?>
 			<tr>
 				<th scope="row"><?php echo $row->tac_id; ?></th>
 				<td><?php echo $row->tac_description; ?></td>
 				<td><?php echo $row->tac_exp_id; ?></td>
-                <td><a href="<?php echo site_url('CrudController/edit_tache'); ?>/<?php echo $row->tac_id ?>" >Editer</a> |
-				<a href="<?php echo site_url('CrudController/delete_tache'); ?>/<?php echo $row->tac_id ?>">Supprimer</a></td>
-            </tr>
-            <?php }?>
+				<td><a href="<?php echo site_url('CrudController/edit_tache'); ?>/<?php echo $row->tac_id ?>">Editer</a>
+					|
+					<a
+						href="<?php echo site_url('CrudController/delete_tache'); ?>/<?php echo $row->tac_id ?>">Supprimer</a>
+				</td>
+			</tr>
+			<?php }?>
 		</tbody>
 	</table>
 </div>
